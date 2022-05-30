@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :pets
   validates :username, presence: true, uniqueness: true
-  # validates :age, comparison: { greater_than: 17 }
+  validates :age, numericality: { greater_than: 17 }
 end
