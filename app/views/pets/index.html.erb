@@ -1,0 +1,16 @@
+
+<div class="container">
+  <h3>Top-rated dogs to borrow in your area:</h3>
+  <div class="container white-cards">
+      <% @pets.each do |pet| %>
+        <div class="card white-card p-2">
+          <%= cl_image_tag pet.photos.first.key, crop: :fill %>
+          <div class="pet-info">
+            <p> <strong>name:</strong> <%= pet.name %> </p>
+            <p> <strong>species:</strong> <%= pet.species %> </p>
+            <p class = "text-muted"> daily price: $<%= (pet.price_per_day).round %> </p>
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>
