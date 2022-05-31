@@ -4,6 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :pets
-  validates :username, presence: true, uniqueness: true
-  validates :age, numericality: { greater_than: 17 }
+  # validates :username, presence: true, uniqueness: true
+  # validates :age, numericality: { greater_than: 17 }
 end
