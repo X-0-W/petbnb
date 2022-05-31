@@ -1,2 +1,54 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.white-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.white-card {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 5px;
+
+  img {
+    border-radius: 4px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5%;
+  }
+
+  p {
+    font-size: smaller;
+    margin-bottom: 0px;
+    padding: 1% 5% 0%;
+  }
+}
+
+.pet-info {
+  position: relative;
+}
+
+.toilet-trained {
+  position: absolute;
+}
+
+@media(max-width: 992px) {
+  .white-cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media(max-width: 768px) {
+  .white-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 576px) {
+  .white-cards {
+    grid-template-columns: 1fr;
+  }
+}
