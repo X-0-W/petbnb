@@ -1,0 +1,52 @@
+.card-pet {
+  overflow: hidden;
+  background: white;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+// .card-trip > img {
+//   height: 200px;
+//   width: 100%;
+//   object-fit: cover;
+// }
+
+.card-pet h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-pet p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+.card-pet .card-pet-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+
+.pet-info {
+  display: flex;
+  justify-content: space-between;
+  h2 {
+    line-height: 1.2;
+  }
+}
+
+.info-list {
+  width: 50%;
+}
+
+.pet-description {
+  width: 50%;
+}
+
+.owner {
+text-align: right;
+
+}

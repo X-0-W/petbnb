@@ -1,5 +1,8 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "show";
+
+// need to move Xander's CSS below to separate page for pets_index
 
 .white-cards {
   display: grid;
