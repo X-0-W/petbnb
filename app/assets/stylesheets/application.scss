@@ -11,6 +11,11 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "pages/landing";
+@import "pages/buttons";
+
+
+// Add general formatting below (e.g. remove link formatting)
 
 a {
   text-decoration: none;
