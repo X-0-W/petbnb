@@ -2,7 +2,7 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :pet
   validates :start_date, presence: true
-  validate :end_time_after_start_time
+  validate :end_time_after_start_time # custom validation
 
   private
 
