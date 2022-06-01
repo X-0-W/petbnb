@@ -3,6 +3,7 @@
   <div class="col-6">
     <div class="pt-4">
       <h1> <%= @pet.name %> - <%= @pet.species %> </h1>
+      <p> <%= @pet.address.capitalize %> </p>
     </div>
 
 
@@ -24,7 +25,7 @@
           <div class=
           "<%= index==0 ? "carousel-item active" : "carousel-item" %>"
           >
-            <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class: "d-block w-100" %>
+            <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, gravity: :faces, class: "d-block w-100" %>
           </div>
         <% end %>
 

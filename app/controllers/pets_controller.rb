@@ -1,6 +1,6 @@
 class PetsController < ApplicationController
   before_action :find_pet, only: [:update, :edit, :destroy, :show]
-  skip_before_action :authenticate_user!, only: [:show, :index]
+  skip_before_action :authenticate_user!, only: [:show, :index, :map]
 
   def create
     @pet = Pet.new(pet_params)
@@ -15,6 +15,18 @@ class PetsController < ApplicationController
 
   def index
     @pets = policy_scope(Pet).order(created_at: :desc)
+  end
+
+  def map
+    @pets = policy_scope(Pet).order(created_at: :desc)
+    @markers = @pets.geocoded.map do |pet|
+      {
+        lat: pet.latitude,
+        lng: pet.longitude,
+        marker_info_window: render_to_string(partial: "marker_info_window", locals: { pet: pet }),
+        image_url: pet.photos.first.url
+      }
+    end
   end
 
   def new
@@ -42,7 +54,7 @@ class PetsController < ApplicationController
   private
 
   def pet_params
-    params.require(:pet).permit(:species, :name, :toilet_trained, :description, :price_per_day, photos: [])
+    params.require(:pet).permit(:species, :name, :toilet_trained, :description, :price_per_day, :address, photos: [])
   end
 
   def find_pet
