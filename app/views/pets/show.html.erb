@@ -12,7 +12,8 @@
       <div class="carousel-indicators">
         <% @pet.photos.each_with_index do |photo, index| %>
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to= "<%= index.to_s %>" aria-label="<%= "Slide #{index + 1}"%>"
-          class= <%= index==0 ? "\"active\" aria-current=\"true\"" : "" %>
+          class=<%= index==0 ? "active" : "" %>
+          aria-current=<%= index==0 ? "true" : "" %>
           ></button>
 
         <% end %>
@@ -37,6 +38,7 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
+
 
     <div class="card-pet-bottom px-3 pt-3">
       <div class="card-pet-price mb-4">
