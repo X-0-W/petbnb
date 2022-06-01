@@ -1,6 +1,14 @@
 // Import page-specific CSS files here.
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import "home";
 @import "show";
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  background-color: white;
+}
 
 // need to move Xander's CSS below to separate page for pets_index
 
