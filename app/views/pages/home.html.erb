@@ -1,1 +1,27 @@
-<%= render 'landing' %>
+
+<div class="landing-banner">
+  <%= image_tag 'landing-page-img.png', height: "260", width: "900"%>
+  <div class="text-center">
+    <h3>Share the <i class="fas fa-heart"></i> of pets</h3>
+  </div>
+</div>
+
+<div class="img-container d-flex justify-content-center">
+  <div class="description-container">
+    <p class="description"><strong>I’m an Owner</strong><br/>
+      Find a trusted local animal lover to
+      take care of your pet when you can’t.
+      They will treat your pet like family
+    </p>
+    <%= image_tag '3d-desgin.png', class: "3d-img", size: "250"%>
+    <%= link_to "Get started as an Owner", new_pet_path, class: "btn btn-action" %>
+  </div>
+  <div class="description-container">
+    <p class="description"> <strong>I’m an Borrower</strong><br/>
+      Fill the void in your life by spending time with animal and helping
+      out Owners at the same time.
+    </p>
+    <%= image_tag '3d-desgin2.png', class: "3d-img", size: "250"%>
+    <%= link_to "Get started as a Borrower", pets_path, class: "btn btn-sec-action" %>
+  </div>
+</div>
