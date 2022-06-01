@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  display: flex;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,5 +9,39 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 100px;
+}
+
+
+// For dropdown
+.dropdown-menu {
+  border-radius: 20px;
+}
+
+.dropdown-list-icon {
+  height: 28px;
+}
+
+.bordered {
+  border: 3px solid grey;
+  border-radius: 20px;
+}
+// For the search bar
+.search-bar {
+  border: 1px solidgray;
+  border-radius: 30px;
+}
+
+.button {
+  border: none;
+  background-color: rgb(81, 207, 81);
+  color: rgb(255, 255, 255);
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 10px 10px 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  font-family:'Times New Roman', Times, serif;
 }

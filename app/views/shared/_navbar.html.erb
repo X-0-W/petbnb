@@ -1,0 +1,54 @@
+<div class="navbar navbar-expand-lg navbar-light navbar-lewagon">
+    <%# Logo %>
+  <div class="container-fluid">
+    <%= link_to "#", class: "navbar-brand" do %>
+      <%= image_tag 'Logo.png'%>
+    <% end %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon">
+      </span>
+    </button>
+  </div>
+
+  <%# Search bar %>
+  <div class="container-fluid">
+    <form class="input-group search-bar w-a">
+      <input type="search" class="form-control" placeholder="Search"/>
+    </form>
+    <div>
+      <button class="button">
+        <i class="fas fa-search" style="color-white">Search</i>
+      </button>
+    </div>
+  </div>
+
+  <%# drop down box  %>
+  <div class="container-fluid justify-content-end">
+    <div class="d-inline-flex bordered p-1 align-items-center">
+      <%# list drop down %>
+      <div class="d-flex justify-content-sm-between m-1">
+        <ul class="navbar-nav me-auto">
+          <%= image_tag "dropdown.png", class: "dropdown-toggle dropdown-list-icon", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Lease a pet", "#", class: "dropdown-item" %>
+              <%= link_to "View your listed pets", "#", class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
+      </div>
+
+      <%# avatar dropdown box %>
+      <div class="d-flex justify-content-sm-between">
+          <% if user_signed_in? %>
+            <%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Sign up", "#", class: "dropdown-item" %>
+              <%= link_to "Log in", "#", class: "dropdown-item" %>
+            </div>
+          <% else %>
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
