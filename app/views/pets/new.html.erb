@@ -1,5 +1,5 @@
 <div class="container row justify-content-center ">
-  <div class="col-6">
+  <div class="col-6 mb-5">
     <h1>Add a pet for rent</h1>
     <%= simple_form_for @pet  do |f| %>
       <%= f.input :name %>
@@ -7,7 +7,7 @@
       <%= f.input :description %>
       <%= f.input :toilet_trained %>
       <%= f.input :price_per_day %>
-      <%= f.input :photo, as: :file %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       <div class="d-grid gap-2">
         <%= f.submit "Add your pet", class: "btn btn-primary btn-lg btn-block" %>
       </div>
