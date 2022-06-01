@@ -10,6 +10,8 @@ require 'open-uri'
 
 # create 4x user profiles
 
+Booking.destroy_all && Pet.destroy_all && User.destroy_all
+
 AGE = (18..100).to_a
 
 User.create(username: 'Reiko', email: 'reiko@gmail.com', password: 'testing', age: AGE.sample)
