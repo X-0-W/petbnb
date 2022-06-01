@@ -1,11 +1,13 @@
 class PetsController < ApplicationController
   before_action :find_pet, only: [:update, :edit, :destroy, :show]
+  skip_before_action :authenticate_user!, only: [:show, :index]
 
   def create
     @pet = Pet.new(pet_params)
     authorize @pet
+    @pet.user = current_user
     if @pet.save
-      redirect_to pet(@pet)
+      redirect_to pets_path
     else
       render :new
     end
@@ -40,7 +42,7 @@ class PetsController < ApplicationController
   private
 
   def pet_params
-    params.require(:pet).permit(:species, :name, :toilet_trained, :description, :price_per_day)
+    params.require(:pet).permit(:species, :name, :toilet_trained, :description, :price_per_day, photos: [])
   end
 
   def find_pet

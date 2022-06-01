@@ -1,0 +1,20 @@
+$btn-color: #7dde75;
+
+.btn-action {
+  background-color: #bdf0b8;
+  border-radius: 10px;
+  color: #000000;
+  font-size: 18px;
+
+  &:hover {
+    background-color: $btn-color;
+    color: white;
+  }
+}
+
+.btn-sec-action {
+  background-color: #587356;
+  border-radius: 10px;
+  color: white;
+  font-size: 18px;
+}
