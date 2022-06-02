@@ -2,6 +2,11 @@ class PetsController < ApplicationController
   before_action :find_pet, only: [:update, :edit, :destroy, :show]
   skip_before_action :authenticate_user!, only: [:show, :index]
 
+  def new
+    @pet = Pet.new
+    authorize @pet
+  end
+
   def create
     @pet = Pet.new(pet_params)
     authorize @pet
@@ -15,11 +20,6 @@ class PetsController < ApplicationController
 
   def index
     @pets = policy_scope(Pet).order(created_at: :desc)
-  end
-
-  def new
-    @pet = Pet.new
-    authorize @pet
   end
 
   def show

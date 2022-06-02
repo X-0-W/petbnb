@@ -5,12 +5,10 @@
 .landing-banner {
   background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), asset-url("dog_banner.jpeg");
   background-size: cover;
-  position: relative;
   text-align: center;
   color: white;
   margin: 10px auto;
   border-radius: 10px;
-
   div {
     padding: 150px;
   }
