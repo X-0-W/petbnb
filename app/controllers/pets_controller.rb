@@ -2,17 +2,6 @@ class PetsController < ApplicationController
   before_action :find_pet, only: [:update, :edit, :destroy, :show]
   skip_before_action :authenticate_user!, only: [:show, :index, :map]
 
-  def create
-    @pet = Pet.new(pet_params)
-    authorize @pet
-    @pet.user = current_user
-    if @pet.save
-      redirect_to pets_path
-    else
-      render :new
-    end
-  end
-
   def index
     @pets = policy_scope(Pet).order(created_at: :desc)
   end
@@ -28,14 +17,25 @@ class PetsController < ApplicationController
       }
     end
   end
+  
+  def show
+    authorize @pet
+  end
 
   def new
     @pet = Pet.new
     authorize @pet
   end
 
-  def show
+  def create
+    @pet = Pet.new(pet_params)
     authorize @pet
+    @pet.user = current_user
+    if @pet.save
+      redirect_to pets_path
+    else
+      render :new
+    end
   end
 
   def update

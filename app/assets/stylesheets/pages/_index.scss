@@ -13,6 +13,11 @@ body {
   background-color: white;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 // need to move Xander's CSS below to separate page for pets_index
 
 @media(max-width: 992px) {
