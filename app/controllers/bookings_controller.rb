@@ -9,8 +9,10 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     authorize @booking
     @booking.user = current_user
+
     if @booking.save
       # redirect_to
+      redirect_to pets_path
     else
       render :new
     end

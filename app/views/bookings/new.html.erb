@@ -1,11 +1,12 @@
 <div class="container row justify-content-center ">
   <div class="col-7 my-5">
     <h1 class = "text-center">Book your new buddy <%= @pet.name %> <i class="fas fa-dog"></i></h1>
-    <%= simple_form_for @booking do |f| %>
+    <%= simple_form_for [@pet, @booking]  do |f| %>
       <%= f.input :start_date %>
       <%= f.input :end_date %>
       <%= f.input :total_price %>
-      # comment field
+      <%# parse this information into the db %>
+      <%# # comment field %>
       <div class="d-grid gap-2">
         <%= f.submit "Book your new buddy!", class: "btn btn-action btn-lg btn-block" %>
       </div>

@@ -17,7 +17,7 @@ class PetsController < ApplicationController
       }
     end
   end
-  
+
   def show
     authorize @pet
   end
