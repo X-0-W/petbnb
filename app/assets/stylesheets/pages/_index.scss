@@ -1,6 +1,4 @@
 // Import page-specific CSS files here.
-
-
 @import "home";
 @import "show";
 @import "landing";
@@ -11,6 +9,7 @@ body {
   font-family: "Roboto", sans-serif;
   margin: 0;
   background-color: white;
+  margin-bottom: 70px;
 }
 
 a {
