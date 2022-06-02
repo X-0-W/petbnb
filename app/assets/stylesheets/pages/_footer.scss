@@ -10,11 +10,15 @@
   border-top: 1px solid rgba(0, 0, 0, 0.3);
   bottom: 0;
   margin-top: 10px;
+  position: fixed;
+  bottom: 0;
 }
+
 .footer-links {
   display: flex;
   align-items: center;
 }
+
 .footer-links a {
   color: black;
   opacity: 0.15;
