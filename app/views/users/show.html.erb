@@ -1,0 +1,19 @@
+<h1><%= current_user.email %>'s Dashboard</h1>
+<h2>Your Pets</h2>
+<% @pets.each do |pet| %>
+  <h4> <%= pet.name %> </h4>
+  <h6> <%= pet.species %> </h6>
+  <h6> <%= pet.address %> </h6>
+  <p><%= pet.description %> </p>
+<% end %>
+
+<h2><%= link_to "Add a new pet...", new_pet_path %></h2>
+
+
+<h2>Your Bookings</h2>
+<% @bookings.each do |booking| %>
+  <h4> <%= booking.pet.name %> </h4>
+  <h6> From<%= booking.start_date %> </h6>
+  <h6> To <%= booking.end_date %> </h6>
+  <h6> Total Price: <%= booking.total_price %> </h6>
+<% end %>

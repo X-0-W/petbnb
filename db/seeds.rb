@@ -81,4 +81,17 @@ dog.address = DOG_ADDR[10]
 dog.save!
 
 p 'dog example seeded'
+
+6.times do
+  new_booking = Booking.new(
+    start_date: Date.today,
+    end_date: Date.tomorrow,
+    pet: Pet.all.sample,
+    user: User.all.sample
+  )
+  new_booking.calculate_total_price
+  new_booking.save!
+end
+p 'bookings seeded'
+
 p 'seed complete'
