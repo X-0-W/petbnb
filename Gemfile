@@ -71,3 +71,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 
 # Gemfile cloudinary
 gem 'cloudinary', '~> 1.16.0'
+
+
+# Gemfile geocoder
+gem "geocoder"
