@@ -4,10 +4,18 @@ class PetsController < ApplicationController
 
   def index
     @pets = policy_scope(Pet).order(created_at: :desc)
+    if params[:query].present?
+      @pets = Pet.where("species ILIKE ?", "%#{params[:query]}%")
+    else
+      @pets = Pet.all
+    end
   end
 
   def map
     @pets = policy_scope(Pet).order(created_at: :desc)
+    @pets = @pets.where if params[:species]
+    @pets = # second filter
+    @pets = # third filter
     @markers = @pets.geocoded.map do |pet|
       {
         lat: pet.latitude,
@@ -17,7 +25,7 @@ class PetsController < ApplicationController
       }
     end
   end
-  
+
   def show
     authorize @pet
   end

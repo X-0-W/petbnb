@@ -46,7 +46,7 @@ end
 
 p 'random seeds completed'
 
-rabbit = Pet.new(name: DOG_NAMES.sample, species: 'dog', toilet_trained: TOILET_TRAINED.sample, description: "hops a lot, big ball of fluff - great for hugs", price_per_day: rand(25..100), user: User.all.sample)
+rabbit = Pet.new(name: DOG_NAMES.sample, species: 'rabbit', toilet_trained: TOILET_TRAINED.sample, description: "hops a lot, big ball of fluff - great for hugs", price_per_day: rand(25..100), user: User.all.sample)
 file = URI.open('https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmFiYml0fGVufDB8fDB8fA%3D%3D&w=1000&q=80')
 rabbit.photos.attach(io: file, filename: "rabbittwo.png", content_type: 'image/png')
 file = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQimKYQiAFfFqC-2xlcGaf9WEaEBKxVoCp-4Q&usqp=CAU')
