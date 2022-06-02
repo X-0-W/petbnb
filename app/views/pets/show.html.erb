@@ -16,7 +16,7 @@
         <% @pet.photos.each_with_index do |photo, index| %>
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to= "<%= index.to_s %>" aria-label="<%= "Slide #{index + 1}"%>"
           class=<%= index==0 ? "active" : "" %>
-          aria-current=<%= index==0 ? "true" : "" %>
+          aria-current=<%= index == 0 ? "true" : "" %>
           ></button>
 
         <% end %>
@@ -25,7 +25,7 @@
 
         <% @pet.photos.each_with_index do |photo, index| %>
           <div class=
-          "<%= index==0 ? "carousel-item active" : "carousel-item" %>"
+          "<%= index == 0 ? "carousel-item active" : "carousel-item" %>"
           >
             <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, gravity: :faces, class: "d-block w-100" %>
           </div>
@@ -46,7 +46,7 @@
     <div class="card-pet-bottom px-3 pt-3">
       <div class="card-pet-price mb-4">
         <div>
-          <h2>$<%= @pet.price_per_day %>/day</h2>
+          <h2>$<%= (@pet.price_per_day).round %>/day</h2>
           <p>The one you must have!!</p>
         </div>
         <h2 class="card-pet-button btn btn-primary">
@@ -57,10 +57,8 @@
       <div class="pet-info">
         <div class="info-list">
           <h2>
-            <strong> Species: </strong><br>
-            <%= @pet.species %> <br><br>
-            <strong>Toilet trained: </strong><br>
-            <%= @pet.toilet_trained ? "YES" : "NO" %>
+            <strong> <i class="fas fa-paw"></i></strong> <%= @pet.species %> <br><br>
+            <span> <i class="fas fa-toilet"></i> <%= @pet.toilet_trained ? 'I can hold it in' : 'I may leave a mess' %> </span>
           </h2>
         </div>
         <div class="pet-description">
