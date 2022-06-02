@@ -9,4 +9,5 @@ Rails.application.routes.draw do
     end
   end
   resources :bookings, only: [:index, :edit, :update]
+  get '/dashboard', to: 'users#show', as: 'dashboard'
 end
