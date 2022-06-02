@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+
   def new
     @booking = Booking.new
     @pet = Pet.find(params[:pet_id])
@@ -9,7 +10,9 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     authorize @booking
     @booking.user = current_user
-    @booking.pet_id = params[:pet_id]
+    @pet = Pet.find(params[:pet_id])
+    @booking.pet = @pet
+    @booking.calculate_total_price
     if @booking.save
       redirect_to dashboard_path
     else
