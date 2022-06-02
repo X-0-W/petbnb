@@ -8,39 +8,7 @@
         <% end %>
     </div>
 
-
-  <div class="card-pet">
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <% @pet.photos.each_with_index do |photo, index| %>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to= "<%= index.to_s %>" aria-label="<%= "Slide #{index + 1}"%>"
-          class=<%= index==0 ? "active" : "" %>
-          aria-current=<%= index == 0 ? "true" : "" %>
-          ></button>
-
-        <% end %>
-      </div>
-      <div class="carousel-inner">
-
-        <% @pet.photos.each_with_index do |photo, index| %>
-          <div class=
-          "<%= index == 0 ? "carousel-item active" : "carousel-item" %>"
-          >
-            <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, gravity: :faces, class: "d-block w-100" %>
-          </div>
-        <% end %>
-
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-
+    <%= render 'pet_photo_carousel' %>
 
     <div class="card-pet-bottom px-3 pt-3">
       <div class="card-pet-price mb-4">
@@ -48,8 +16,8 @@
           <h2>$<%= (@pet.price_per_day).round %>/day</h2>
           <p>The one you must have!!</p>
         </div>
-        <h2 class="card-pet-button btn btn-primary">
-          <%= link_to "order booking!", new_pet_booking_path(@pet) %>
+        <h2 class="card-pet-button btn btn-sec-action">
+          <%= link_to "Book Me!", new_pet_booking_path(@pet) %>
         </h2>
       </div>
 

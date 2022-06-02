@@ -9,7 +9,7 @@ body {
   font-family: "Roboto", sans-serif;
   margin: 0;
   background-color: white;
-  margin-bottom: 70px;
+  margin-bottom: 80px;
 }
 
 a {
@@ -19,19 +19,19 @@ a {
 
 // need to move Xander's CSS below to separate page for pets_index
 
-@media(max-width: 992px) {
+@media (max-width: 992px) {
   .white-cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
   .white-cards {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-@media(max-width: 576px) {
+@media (max-width: 576px) {
   .white-cards {
     grid-template-columns: 1fr;
   }
