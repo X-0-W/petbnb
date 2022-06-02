@@ -9,13 +9,13 @@
           ></button>
         <% end %>
       </div>
-      
+
       <div class="carousel-inner">
         <% @pet.photos.each_with_index do |photo, index| %>
           <div class=
           "<%= index==0 ? "carousel-item active" : "carousel-item" %>"
           >
-            <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, gravity: :faces, class: "d-block w-100" %>
+            <%= cl_image_tag photo.key, height: 300, width: 600, crop: :fill, gravity: :face, class: "d-block w-100" %>
           </div>
         <% end %>
       </div>
