@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
     @booking.pet = @pet
     @booking.calculate_total_price
     if @booking.save
-      redirect_to dashboard_path
+      # redirect_to dashboard_path
     else
       render :new
     end
