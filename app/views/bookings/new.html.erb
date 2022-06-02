@@ -1,6 +1,6 @@
 <div class="container row justify-content-center ">
   <div class="col-7 my-5">
-    <h1 class ="text-center">Book your new buddy <%= @pet.name %> <i class="fas fa-dog"></i></h1>
+    <h1 class ="text-center">Book your new buddy <%= @pet.name %></h1>
     <%= simple_form_for [@pet, @booking] do |f| %>
       <%= f.input :start_date, :as => :date, :start_year => 2022,
       :end_year => Date.today.year + 2,
@@ -14,3 +14,5 @@
     <% end %>
   </div>
 </div>
+
+<%# <i class="fas fa-dog">  </i>%>
