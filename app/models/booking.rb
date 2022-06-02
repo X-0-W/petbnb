@@ -11,6 +11,6 @@ class Booking < ApplicationRecord
   private
 
   def end_time_after_start_time
-    errors.add(:end_date, "can't be in the past") unless end_date > start_date
+    errors.add(:end_date, "can't be in the past") unless end_date >= start_date
   end
 end
