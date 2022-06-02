@@ -15,5 +15,5 @@
   <h4> <%= booking.pet.name %> </h4>
   <h6> From<%= booking.start_date %> </h6>
   <h6> To <%= booking.end_date %> </h6>
-  <h6> Total Price: <%= booking.total_price %> </h6>
+  <h6> Total Price: $<%= booking.total_price&.round %> </h6>
 <% end %>
