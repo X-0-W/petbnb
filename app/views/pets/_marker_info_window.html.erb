@@ -1,2 +1,3 @@
-<h2><%= link_to pet.name, pet_path(pet)  %></h2>
-<p><%= pet.address.capitalize %></p>
+<h2><%= link_to "#{pet.name} - #{pet.species}", pet_path(pet)  %> </h2>
+<p><%= link_to pet.address.titleize, pet_path(pet) %></p>
+<p><%= link_to "$ #{pet.price_per_day} / Day", pet_path(pet) %></p>
