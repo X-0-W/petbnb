@@ -3,19 +3,8 @@
   display: flex;
   position: sticky;
   top: 0px;
-  // border-bottom: 2px solid #8080808c;
   box-shadow: 0px 3px 3px rgba(105, 105, 105, 0.32);
   z-index: 1;
-}
-// background: white;
-// display: flex;
-// position: sticky;
-// top: 0px;
-// box-shadow: 0px 3px 3px rgb(114 114 114 / 32%);
-// z-index: 1;
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: auto;
 }
 
 .navbar-lewagon .navbar-brand img {
@@ -24,23 +13,23 @@
 }
 
 // For dropdown
-.dropdown-list-icon {
+.navbar-lewagon .dropdown-list-icon {
   height: 28px;
   cursor: pointer;
 }
 
 // for profile
-.profile {
+.navbar-lewagon .profile {
   cursor: pointer;
 }
 
 // For the search bar
-.search-bar {
+.navbar-lewagon .search-bar {
   border: 1px solidgray;
   border-radius: 30px;
 }
 
-.button {
+.navbar-lewagon .button {
   border: none;
   background-color: rgb(81, 207, 81);
   color: rgb(255, 255, 255);
@@ -52,4 +41,9 @@
   cursor: pointer;
   border-radius: 10px;
   font-family:'Times New Roman', Times, serif;
+
+  &:hover {
+    background-color: rgb(47, 139, 47);
+    color: rgb(213, 213, 213);
+  }
 }
