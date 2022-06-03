@@ -1,19 +1,51 @@
-<h1><%= current_user.email %>'s Dashboard</h1>
-<h2>Your Pets</h2>
-<% @pets.each do |pet| %>
-  <h4> <%= pet.name %> </h4>
-  <h6> <%= pet.species %> </h6>
-  <h6> <%= pet.address %> </h6>
-  <p><%= pet.description %> </p>
-<% end %>
+<div class="container">
 
-<h2><%= link_to "Add a new pet...", new_pet_path %></h2>
+<h2 class="mt-2"> <%= current_user.email.partition('@').first.capitalize %>'s Dashboard</h2>
 
+<h3 class="mt-2">Your Bookings</h3>
 
-<h2>Your Bookings</h2>
-<% @bookings.each do |booking| %>
-  <h4> <%= booking.pet.name %> </h4>
-  <h6> From<%= booking.start_date %> </h6>
-  <h6> To <%= booking.end_date %> </h6>
-  <h6> Total Price: $<%= booking.total_price&.round %> </h6>
-<% end %>
+<div class="white-cards">
+  <% @bookings.each do |booking| %>
+    <div class="card white-card p-2">
+      <div class="white-card-img">
+        <% if booking.pet.photos.attached? %>
+          <%= cl_image_tag booking.pet.photos.first.key, crop: :fill %>
+        <% else %>
+          <%= image_tag "pet_default_shadow.jpg", crop: :fill %>
+        <% end %>
+      </div>
+    <div class="white-card-description p-2">
+      <h6> <i class="fas fa-tag"></i> <%= booking.pet.name %> </h6>
+      <h6> <i class="fas fa-paw"></i> <%= booking.pet.species %> </h6>
+      <h6> <i class="fas fa-map-marked"></i> <%= booking.pet.address %> </h6>
+      <h6> <i class="far fa-calendar-alt"></i> <%= booking.start_date.strftime('%d-%b-%Y') %> to <%=  booking.end_date.strftime('%d-%b-%Y') %> </h6>
+      <h6> Total Price: $<%= booking.total_price&.round %> </h6>
+    </div>
+    </div>
+  <% end %>
+
+</div>
+
+<h3 class="mt-2 d-flex justify-content-between">Your Pets <%= link_to "Add a new pet", new_pet_path, class: "link" %></h3>
+<div class="white-cards">
+  <% @pets.each do |pet| %>
+  <div class="card white-card p-2">
+    <div class="white-card-img">
+      <% if pet.photos.attached? %>
+        <%= cl_image_tag pet.photos.first.key, crop: :fill %>
+      <% else %>
+        <%= image_tag "pet_default_shadow.jpg", crop: :fill %>
+      <% end %>
+    </div>
+    <div class="white-card-description p-2">
+      <h6> <i class="fas fa-tag"></i> <%= pet.name %> </h6>
+      <% pet.bookings.each do |booking| %>
+        <h6> <%= booking.user.email %> </h6>
+        <h6> <i class="far fa-calendar-alt"></i> <%= booking.start_date.strftime('%d-%b-%Y') %> to <%=  booking.end_date.strftime('%d-%b-%Y') %> </h6>
+      <% end %>
+    </div>
+    </div>
+  <% end %>
+</div>
+
+</div>

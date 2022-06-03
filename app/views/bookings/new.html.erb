@@ -1,5 +1,6 @@
 <div class="container row justify-content-center ">
   <div class="col-7 my-5">
+
     <div class="pt-4">
     <h1 class ="text-center">Book your new buddy <%= @pet.name %> <i class="fas fa-dog"></i></h1>
 
@@ -13,10 +14,17 @@
         <%= f.input :end_date, :as => :date, :start_year => 2022,
         :end_year => Date.today.year + 2,
         :order => [ :day, :month, :year], :required => true %>
+        <h6> Total Price: $ </h6>
+        <%# @booking.total_price&.round %>
+
         <div class="d-grid gap-2">
           <%= f.submit "Book your new buddy!", class: "btn btn-action btn-lg btn-block" %>
         </div>
       <% end %>
+
     </div>
+
   </div>
 </div>
+
+<%# <i class="fas fa-dog">  </i>%>
