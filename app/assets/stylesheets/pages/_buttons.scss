@@ -11,6 +11,8 @@ $btn-color: #7dde75;
     color: white;
     transform: scale(1.05);
     transition: ease-in-out 0.2s;
+    overflow: hidden;
+    border-radius: 10px;
   }
 }
 
@@ -22,5 +24,7 @@ $btn-color: #7dde75;
   &:hover {
     transform: scale(1.05);
     transition: ease-in-out 0.2s;
+    overflow: hidden;
+    border-radius: 10px;
   }
 }
