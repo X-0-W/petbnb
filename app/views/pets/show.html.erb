@@ -17,13 +17,10 @@
 
   <%= render 'pet_photo_carousel' %>
 
-
       <div class="card-pet-bottom p-3 p-3">
         <div class="card-pet-price mb-4 d-flex align-items-center">
           <div>
-            <%# <div class="info-list"> %>
-                <h2>$<%= (@pet.price_per_day).round %> / day</h2>
-                <%# <p>The one you must have!!</p> %>
+            <h2>$<%= (@pet.price_per_day).round %> / day</h2>
           </div>
           <div>
             <h2><strong> <i class="fas fa-paw"></i></strong> <%= @pet.species %></h2>
@@ -43,7 +40,7 @@
                 <p  style="font-size:16px">Description: <%= @pet.description %></p>
               </div>
               <div class="w-50">
-                <h6 class="owner text-center">Owned by <%= current_user.email.partition('@').first.capitalize%></h6>
+                <% <h6 class="owner text-center">Owned by <%= current_user.email.partition('@').first.capitalize %></h6>
               </div>
             </div>
           </div>
