@@ -40,7 +40,7 @@
                 <p  style="font-size:16px">Description: <%= @pet.description %></p>
               </div>
               <div class="w-50">
-                <% <h6 class="owner text-center">Owned by <%= current_user.email.partition('@').first.capitalize %></h6>
+                <h6 class="owner text-right">Owned by <%= @pet.user.email.partition('@').first.capitalize %></h6>
               </div>
             </div>
           </div>
