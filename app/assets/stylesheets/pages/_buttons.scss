@@ -9,6 +9,8 @@ $btn-color: #7dde75;
   &:hover {
     background-color: $btn-color;
     color: white;
+    transform: scale(1.05);
+    transition: ease-in-out 0.2s;
   }
 }
 
@@ -17,4 +19,8 @@ $btn-color: #7dde75;
   border-radius: 10px;
   color: white;
   font-size: 18px;
+  &:hover {
+    transform: scale(1.05);
+    transition: ease-in-out 0.2s;
+  }
 }
