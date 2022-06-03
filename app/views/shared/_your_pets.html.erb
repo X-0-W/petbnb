@@ -15,7 +15,7 @@
           <% end %>
           <% pet.bookings.each do |booking| %>
             <h6> <%= booking.user.email %> </h6>
-            <h6> <i class="far fa-calendar-alt"></i> <%= booking.start_date.strftime('%d-%b-%Y') %> to <%=  booking.end_date.strftime('%d-%b-%Y') %> </h6>
+            <h6> <i class="far fa-calendar-alt"></i> <%= booking.start_date.strftime('%d %b %y') %> - <%=  booking.end_date.strftime('%d %b %y') %> </h6>
           <% end %>
           <p class="text-danger position-absolute cancel-button"> Edit </p>
         </div>

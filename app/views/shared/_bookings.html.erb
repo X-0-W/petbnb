@@ -12,7 +12,7 @@
           <h6> <i class="fas fa-tag"></i> <%= booking.pet.name %> </h6>
           <h6> <i class="fas fa-paw"></i> <%= booking.pet.species %> </h6>
           <h6> <i class="fas fa-map-marked"></i> <%= booking.pet.address %> </h6>
-          <h6> <i class="far fa-calendar-alt"></i> <%= booking.start_date.strftime('%d-%b-%Y') %> to <%=  booking.end_date.strftime('%d-%b-%Y') %> </h6>
+          <h6> <i class="far fa-calendar-alt"></i> <%= booking.start_date.strftime('%d %b %y') %> - <%=  booking.end_date.strftime('%d %b %y') %> </h6>
           <h6> Total Price: $<%= booking.total_price&.round %> </h6>
           <p class="text-danger position-absolute cancel-button"> Cancel </p>
           <p class="text-secondary position-absolute amend-button"> Amend </p>
