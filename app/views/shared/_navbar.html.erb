@@ -1,51 +1,35 @@
 <div class="navbar navbar-expand-lg navbar-light navbar-lewagon content-wrapper">
-    <%# Logo %>
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag 'Logo.png'%>
     <% end %>
-  </div>
-  <%# Search bar %>
-  <div class="container-fluid">
-    <form class="input-group search-bar w-a">
-      <input type="search" class="form-control" placeholder="Search"/>
-    </form>
-    <div>
-      <button class="button">
-        <i class="fas fa-search" style="color-white"></i>
-      </button>
-    </div>
-  </div>
-  <%# drop down box  %>
-  <div class="container-fluid justify-content-end">
+    <%= form_tag pets_path, method: :get, class: "input-group search-bar w-a" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Search by species"
+        %>
+      <%= button_tag type: "submit", class: "btn btn-action" do %>
+        <%= icon('fas', 'search') %>
+      <% end %>
+    <% end %>
     <div class="d-inline-flex  p-1 align-items-center">
       <%# list drop down %>
-      <div class="d-flex justify-content-sm-between m-1">
+      <div class="d-flex justify-content-sm-between profile me-1">
         <ul class="navbar-nav me-3">
           <%= image_tag "dropdown.png", class: "dropdown-toggle dropdown-list-icon", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <% if user_signed_in? %>
+              <%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <%= link_to "Home", root_path, class: "dropdown-item" %>
               <%= link_to "Lease a pet", new_pet_path, class: "dropdown-item" %>
               <%= link_to "View listed pets", pets_path, class: "dropdown-item" %>
             <% else %>
               <%= link_to "Login", new_user_session_path, class: "btn btn-primary bordered" %>
-          <% end %>
-            </div>
-      </div>
-      <%# avatar dropdown box %>
-      <div class="d-flex justify-content-sm-between profile me-1">
-          <% if user_signed_in? %>
-            <%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Customise profile", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-            </div>
-          <% else %>
-            <%= link_to "Login", new_user_session_path, class: "btn btn-primary bordered" %>
-          <% end %>
+            <% end %>
+          </div>
         </ul>
       </div>
-    </div>
-  </div>
+   </div>
+ </div>
 </div>

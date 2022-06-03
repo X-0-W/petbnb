@@ -1,6 +1,10 @@
 
 <div class="container">
-  <h3>Top-rated pets to borrow in your area: <%= link_to "MAP (to fontawesome)",  map_pets_path%> </h3>
+  <h3 class="m-3">Top-rated pets to borrow in your area:
+    <%= link_to map_pets_path do %>
+      <%= icon('fas', 'map-marked') %>
+    <% end %>
+  </h3>
   <div class="container white-cards">
       <% @pets.each do |pet| %>
           <%= link_to pet_path(pet), class: "card white-card p-2" do %>
@@ -12,9 +16,9 @@
               <% end %>
             </div>
             <div class="pet-info">
-              <p> <strong>name:</strong> <%= pet.name %> </p>
-              <p> <strong>species:</strong> <%= pet.species %> </p>
-              <p class = "text-muted"> daily price: $<%= (pet.price_per_day).round %> </p>
+              <p> <strong> <i class="fas fa-tag"></i> </strong> <%= pet.name %> </p>
+              <p> <strong> <i class="fas fa-paw"></i></strong> <%= pet.species %> </p>
+              <p> <strong> <i class="fas fa-dollar-sign"></i> </strong> <%= (pet.price_per_day).round %>  per day </p>
             </div>
         <% end %>
       <% end %>

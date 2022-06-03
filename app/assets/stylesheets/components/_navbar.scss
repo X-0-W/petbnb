@@ -40,10 +40,16 @@
   margin: 10px 10px 10px;
   cursor: pointer;
   border-radius: 10px;
-  font-family:'Times New Roman', Times, serif;
 
   &:hover {
     background-color: rgb(47, 139, 47);
     color: rgb(213, 213, 213);
   }
+}
+
+.input-group:not(.has-validation)
+  > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu),
+.input-group:not(.has-validation) > .dropdown-toggle:nth-last-child(n + 3) {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
