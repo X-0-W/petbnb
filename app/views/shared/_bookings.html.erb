@@ -1,0 +1,22 @@
+<div class="white-cards">
+  <% @bookings.each do |booking| %>
+      <%= link_to pet_path(booking.pet), class: "card white-card p-2 mt-2" do %>
+        <div class="white-card-img">
+          <% if booking.pet.photos.attached? %>
+            <%= cl_image_tag booking.pet.photos.first.key, crop: :fill %>
+          <% else %>
+            <%= image_tag "pet_default_shadow.jpg", crop: :fill %>
+          <% end %>
+        </div>
+        <div class="white-card-description p-2 position-relative">
+          <h6> <i class="fas fa-tag"></i> <%= booking.pet.name %> </h6>
+          <h6> <i class="fas fa-paw"></i> <%= booking.pet.species %> </h6>
+          <h6> <i class="fas fa-map-marked"></i> <%= booking.pet.address %> </h6>
+          <h6> <i class="far fa-calendar-alt"></i> <%= booking.start_date.strftime('%d-%b-%Y') %> to <%=  booking.end_date.strftime('%d-%b-%Y') %> </h6>
+          <h6> Total Price: $<%= booking.total_price&.round %> </h6>
+          <p class="text-danger position-absolute cancel-button"> Cancel </p>
+          <p class="text-secondary position-absolute amend-button"> Amend </p>
+        </div>
+      <% end %>
+  <% end %>
+</div>
