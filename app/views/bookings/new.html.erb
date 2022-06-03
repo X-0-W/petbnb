@@ -1,33 +1,34 @@
-<div class="container row justify-content-center ">
-  <div class="col-7 my-5">
+<div class="container">
+  <div class="container row justify-content-center ">
+    <div class="col-7 my-5">
 
-    <div class="pt-4">
-    <h1 class ="text-center">Book your new buddy <%= @pet.name %> <i class="fas fa-dog"></i></h1>
+      <div class="pt-4">
+      <h1 class ="text-center">Book your new buddy <%= @pet.name %> <i class="fas fa-dog"></i></h1>
 
-    <%= render 'pet_photo_carousel' %>
+      <%= render 'pet_photo_carousel' %>
 
-    <div class="mt-4">
-      <%= simple_form_for [@pet, @booking] do |f| %>
-        <%= f.input :start_date, :as => :date, :start_year => 2022,
-        :end_year => Date.today.year + 2,
-        :order => [ :day, :month, :year], :required => true %>
-        <%= f.input :end_date, :as => :date, :start_year => 2022,
-        :end_year => Date.today.year + 2,
-        :order => [ :day, :month, :year], :required => true %>
-        <h6> Total Price: $ </h6>
-        <%# @booking.total_price&.round %>
+      <div class="mt-4">
+        <%= simple_form_for [@pet, @booking] do |f| %>
+          <%= f.input :start_date, :as => :date, :start_year => 2022,
+          :end_year => Date.today.year + 2,
+          :order => [ :day, :month, :year], :required => true %>
+          <%= f.input :end_date, :as => :date, :start_year => 2022,
+          :end_year => Date.today.year + 2,
+          :order => [ :day, :month, :year], :required => true %>
+          <h6> Total Price: $ </h6>
+          <%# @booking.total_price&.round %>
 
-        <div class="d-grid gap-2">
-          <%= f.submit "Book your new buddy!", class: "btn btn-action btn-lg btn-block" %>
-          <h2 class="card-pet-button btn btn-action"><i class="fas fa-long-arrow-alt-left" style="color:white"></i>
-            <%= link_to " Back", pets_path %>
-          </h2>
-        </div>
-      <% end %>
+          <div class="d-grid gap-2">
+            <%= f.submit "Book your new buddy!", class: "btn btn-action btn-lg btn-block" %>
+            <h2 class="card-pet-button btn btn-action"><i class="fas fa-long-arrow-alt-left" style="color:white"></i>
+              <%= link_to " Back", pets_path %>
+            </h2>
+          </div>
+        <% end %>
+
+      </div>
 
     </div>
-
   </div>
 </div>
-
 <%# <i class="fas fa-dog">  </i>%>

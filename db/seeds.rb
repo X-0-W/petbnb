@@ -21,9 +21,7 @@ User.create(username: 'Xander', email: 'xander@gmail.com', password: 'testing', 
 
 # create 16x dog profiles
 
-DOG_NAMES = ["Lola", "Oscar", "Barney", "Fido", "Bella", "Barker", "Daisy", "Figs", "Milo", "Marley", "Luna",
-             "Riley", "Coco", "Lucky", "Pluto", "Beethoven", "Lassie", "Clifford", "Scooby", "Winnie", "Hooch",
-             "Baxter", "Dug", "Toto", "Sass"]
+DOG_NAMES = ["Lola", "Oscar", "Barney", "Fido", "Bella", "Barker", "Daisy", "Figs", "Milo", "Marley", "Luna", "Riley", "Coco", "Lucky", "Pluto", "Beethoven", "Lassie", "Clifford", "Scooby", "Winnie", "Hooch", "Baxter", "Dug", "Toto", "Sass"]
 
 TOILET_TRAINED = [true, false]
 
