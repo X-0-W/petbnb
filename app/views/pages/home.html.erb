@@ -1,27 +1,23 @@
-<div class="container">
-  <div class="landing-banner">
-    <div class="text-center">
-      <h3>Share the <i class="fas fa-heart"></i> of pets</h3>
-    </div>
+<div class="background-container d-flex py-4 align-items-center">
+  <div class="landing-banner d-flex justify-content-left align-items-center px-5">
+    <p>
+      <span data-controller="typed-js" style="color: rgb(180, 180, 180)"></span>
+    </p>
   </div>
 
-  <div class="img-container d-flex justify-content-center">
+  <div class="img-container d-flex flex-column justify-content-end align-items-end">
     <div class="description-container">
-      <p class="description"><strong>I’m an Owner</strong><br/>
-        Find a trusted local animal lover to
-        take care of your pet when you can’t.
-        They will treat your pet like family
-      </p>
-      <%= image_tag '3d-desgin.png', class: "3d-img", size: "250" %>
-      <%= link_to "Get started as an Owner", dashboard_path, class: "btn btn-action" %>
+      <%= image_tag '3d-desgin.png', class: "3d-img", size: "210" %>
+      <div class="buttun-role">
+        <%= link_to "I'm a Owner", dashboard_path %>
+      </div>
     </div>
     <div class="description-container">
-      <p class="description"> <strong>I’m an Borrower</strong><br/>
-        Fill the void in your life by spending time with animal and helping
-        out Owners at the same time.
-      </p>
-      <%= image_tag '3d-desgin2.png', class: "3d-img", size: "250" %>
-      <%= link_to "Get started as a Borrower", pets_path, class: "btn btn-sec-action" %>
+      <%= image_tag '3d-desgin2.png', class: "3d-img", size: "210" %>
+      <div class="buttun-role">
+        <%= link_to "I'm a Borrower", pets_path %>
+      </div>
+
     </div>
   </div>
 </div>
