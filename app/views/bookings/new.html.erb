@@ -13,7 +13,7 @@
         <%= f.input :end_date, :as => :date, :start_year => 2022,
         :end_year => Date.today.year + 2,
         :order => [ :day, :month, :year], :required => true %>
-        <%# <h6> Total Price: $ </h6> %>
+        <h6> Total Price: $ </h6>
         <%# @booking.total_price&.round %>
 
         <div class="d-grid gap-2">
@@ -22,5 +22,8 @@
       <% end %>
 
     </div>
+
   </div>
 </div>
+
+<%# <i class="fas fa-dog">  </i>%>
