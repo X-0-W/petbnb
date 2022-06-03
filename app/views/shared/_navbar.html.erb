@@ -3,7 +3,7 @@
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag 'Logo.png'%>
     <% end %>
-    <%= form_tag pets_path, method: :get, class: "input-group search-bar w-a" do %>
+    <%= form_tag pets_path, method: :get, class: "input-group search-bar w-25" do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",

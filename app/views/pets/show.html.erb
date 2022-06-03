@@ -1,42 +1,53 @@
 
-<div class="container row justify-content-center">
+<div class="container row justify-content-center" id="adjustment">
   <div class="col-6">
-    <div class="pt-4">
-      <h1> <%= @pet.name %> - <%= @pet.species %> </h1>
-        <% if !@pet.address.nil? %>
-      <p> <%= @pet.address.capitalize %> </p>
-        <% end %>
-    </div>
-
-    <%= render 'pet_photo_carousel' %>
-
-    <div class="card-pet-bottom px-3 pt-3">
-      <div class="card-pet-price mb-4">
-        <div>
-          <h2>$<%= (@pet.price_per_day).round %>/day</h2>
-          <p>The one you must have!!</p>
-        </div>
-        <h2 class="card-pet-button btn btn-sec-action">
-          <%= link_to "Book Me!", new_pet_booking_path(@pet) %>
-        </h2>
+    <div class="pt-4 d-flex justify-content-between align-items-center">
+      <div>
+        <h1> <%= @pet.name %> - <%= @pet.species %> </h1>
+          <% if !@pet.address.nil? %>
+        <p> <%= @pet.address.capitalize %> </p>
+          <% end %>
       </div>
-
-      <div class="pet-info">
-        <div class="info-list">
-          <h2>
-            <strong> <i class="fas fa-paw"></i></strong> <%= @pet.species %> <br><br>
-            <span> <i class="fas fa-toilet"></i> <%= @pet.toilet_trained ? 'I can hold it in' : 'I may leave a mess' %> </span>
+        <div>
+          <h2 class="card-pet-button btn btn-action"><i class="fas fa-long-arrow-alt-left" style="color: white"></i>
+            <%= link_to " Back", pets_path %>
           </h2>
         </div>
-        <div class="pet-description">
-          <p>Description: <%= @pet.description %></p>
-        </div>
-      </div>
-      <h6 class="owner">Owned by <%= @pet.user.email %></h6>
     </div>
 
-  </div>
+  <%= render 'pet_photo_carousel' %>
 
-  </div>
 
+      <div class="card-pet-bottom p-3 p-3">
+        <div class="card-pet-price mb-4 d-flex align-items-center">
+          <div>
+            <%# <div class="info-list"> %>
+                <h2>$<%= (@pet.price_per_day).round %> / day</h2>
+                <%# <p>The one you must have!!</p> %>
+          </div>
+          <div>
+            <h2><strong> <i class="fas fa-paw"></i></strong> <%= @pet.species %></h2>
+          </div>
+          <div>
+            <span><i class="fas fa-toilet"></i> <strong><%= @pet.toilet_trained ? 'I can hold it in' : 'I may leave a mess' %></strong> </span>
+          </div>
+          <div>
+            <h2 class="card-pet-button btn btn-sec-action">
+            <%= link_to "Book Me!", new_pet_booking_path(@pet) %>
+            </h2>
+          </div>
+            </div>
+          </div>
+            <div class="d-flex justify-content-space-around align-items-center pb-3 px-3">
+              <div class="w-50">
+                <p  style="font-size:16px">Description: <%= @pet.description %></p>
+              </div>
+              <div class="w-50">
+                <h6 class="owner text-center">Owned by <%= current_user.email.partition('@').first.capitalize%></h6>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
 </div>
